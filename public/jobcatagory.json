@@ -1,0 +1,22 @@
+[
+    {
+      "icon": "https://example.com/icons/marketing.png",
+      "title": "Account & Finance",
+      "available": 300
+    },
+    {
+      "icon": "https://example.com/icons/software.png",
+      "title": "Creative Design",
+      "available": 100
+    },
+    {
+      "icon": "https://example.com/icons/design.png",
+      "title": "Marketing & Sales",
+      "available": 150
+    },
+    {
+      "icon": "https://example.com/icons/customer-service.png",
+      "title": "Engineering Job",
+      "available": 224
+    }
+  ]

@@ -9,12 +9,12 @@ const Navigation = () => {
       <div className='relative flex items-center justify-between'>
         <Link
           to='/'
-          aria-label='JetJobHub'
-          title='JetJobHub'
+          aria-label='DigiEmploy'
+          title='DigiEmploy'
           className='inline-flex items-center'
         >
           <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 '>
-            JetJobHub
+          DigiEmploy
           </span>
         </Link>
 
@@ -23,6 +23,16 @@ const Navigation = () => {
 
         <ul className='items-center hidden space-x-8 lg:flex'>
           {/* no 1 li */}
+          <li>
+            <NavLink
+              to='/'
+              aria-label='home'
+              title='home'
+              className={({ isActive }) => (isActive ? 'active' : 'default')}
+            >
+              Home
+            </NavLink>
+          </li>
 
           <li>
             <NavLink
@@ -68,7 +78,7 @@ const Navigation = () => {
             </NavLink>
           </li>
         </ul>
-        <button className=' btn-primary hidden lg:block'> Click Me</button>
+        <button className=' btn-primary hidden lg:block '> Star Applying</button>
         {/* li-end */}
 
         <div className='lg:hidden'>
@@ -100,12 +110,12 @@ const Navigation = () => {
                   <div>
                     <Link
                       to='/'
-                      aria-label='JetJobHub'
-                      title='JetJobHub'
+                      aria-label='DigiEmploy'
+                      title='DigiEmploy'
                       className='inline-flex items-center'
                     >
-                      <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
-                        JetJobHub
+                      <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase '>
+                      DigiEmploy
                       </span>
                     </Link>
                   </div>
@@ -127,6 +137,16 @@ const Navigation = () => {
                 </div>
                 <nav>
                   <ul className='space-y-4'>
+                  <li>
+                      <Link
+                        to='/'
+                        aria-label='Home'
+                        title='Home'
+                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                      >
+                        Home
+                      </Link>
+                    </li>
                     <li>
                       <Link
                         to='/statistics'
@@ -161,7 +181,7 @@ const Navigation = () => {
                       </Link>
                     </li>
                   </ul>
-                  <button className='btn-primary'> click me</button>
+                  <button className='btn-primary '> click me</button>
                 </nav>
               </div>
             </div>
