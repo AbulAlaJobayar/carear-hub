@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { ShoppingCartIcon } from '@heroicons/react/24/solid'
+
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -13,7 +13,7 @@ const Navigation = () => {
           title='DigiEmploy'
           className='inline-flex items-center'
         >
-          <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 '>
+          <span className='ml-2 text-2xl font-bold tracking-wide text-gray-800 '>
           DigiEmploy
           </span>
         </Link>
