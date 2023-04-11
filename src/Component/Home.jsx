@@ -1,15 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Jobcetagory from './Jobcetagory';
 import Fetcher from './Fetcher';
 
 const Home = () => {
-    const datas = useLoaderData()
-    console.log(datas)
+    const [allDatas,setAllDatas]=useState([]);
+    useEffect(()=>{
+        fetch('data.json')
+        .then(res=>res.json())
+        .then(data=>setAllDatas(data))
+
+    },[])
+
+const datas = useLoaderData()
 const [showAll, setShowAll]=useState(false);
 const handleShowAll=()=>{
     setShowAll(true)
 }
+
+const handleAddToCart=(id)=>{
+    console.log(id)
+}
+
     return (
         <>
             {/* top header section */}
@@ -36,7 +48,7 @@ const handleShowAll=()=>{
                     <p className='text-lg mt-4 text-gray-700'>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 </div>
                 <div className='my-container grid md:grid-cols-2 lg:grid-cols-4 gap-6 '>
-                    {datas.slice(0, 4).map(data => <Jobcetagory key={data.id} data={data}></Jobcetagory>)}
+                    {allDatas.map(data => <Jobcetagory key={data.id} data={data}></Jobcetagory>)}
                 </div>
             </section>
             {/* Featured Jobs section */}
@@ -45,10 +57,10 @@ const handleShowAll=()=>{
                     <h1 className='text-gray-700 text-3xl  lg:text-5xl font-bold'>Featured Jobs</h1>
                     <p className='text-lg mt-4 text-gray-700'>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 </div>
-                <div className='grid lg:grid-cols-2 my-container gap-4'>
-                    {datas.slice(0,showAll ? 6 : 4).map(data=><Fetcher key={data.id} data={data}></Fetcher>)}
+                <div className='grid lg:grid-cols-2 my-container gap-10'>
+                    {datas.slice(0,showAll ? 6 : 4).map(data=><Fetcher key={data.id} data={data}  handleAddToCart={handleAddToCart}></Fetcher>)}
                 </div>
-               <p  onClick={handleShowAll}> <button  className='mx-auto btn-primary text-center'>Show All</button></p>
+               <p  onClick={handleShowAll}> <button  className={`mx-auto border rounded  py-4 px-9 bg-gradient-to-r from-blue-300 to-purple-200 text-center text-xl font-bold text-gray-600 ${showAll===true?"hidden" :"block"}`}>Show All</button></p>
             </section>
         </>
     );
