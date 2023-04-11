@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import Jobcetagory from './Jobcetagory';
 import Fetcher from './Fetcher';
 
+
 const Home = () => {
     const [allDatas,setAllDatas]=useState([]);
     useEffect(()=>{
@@ -16,10 +17,6 @@ const datas = useLoaderData()
 const [showAll, setShowAll]=useState(false);
 const handleShowAll=()=>{
     setShowAll(true)
-}
-
-const handleAddToCart=(id)=>{
-    console.log(id)
 }
 
     return (
@@ -58,7 +55,7 @@ const handleAddToCart=(id)=>{
                     <p className='text-lg mt-4 text-gray-700'>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 </div>
                 <div className='grid lg:grid-cols-2 my-container gap-10'>
-                    {datas.slice(0,showAll ? 6 : 4).map(data=><Fetcher key={data.id} data={data}  handleAddToCart={handleAddToCart}></Fetcher>)}
+                    {datas.slice(0,showAll ? 6 : 4).map(data=><Fetcher key={data.id} data={data}></Fetcher>)}
                 </div>
                <p  onClick={handleShowAll}> <button  className={`mx-auto border rounded  py-4 px-9 bg-gradient-to-r from-blue-300 to-purple-200 text-center text-xl font-bold text-gray-600 ${showAll===true?"hidden" :"block"}`}>Show All</button></p>
             </section>
