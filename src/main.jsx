@@ -40,7 +40,8 @@ const router = createBrowserRouter([
         element: <Blog></Blog>
       }, {
         path: 'appliedjobs',
-        element: <AppliedJobs></AppliedJobs>
+        element: <AppliedJobs></AppliedJobs>,
+        loader: () => fetch('products.json')
       }
 
 

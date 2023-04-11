@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { MapPinIcon, CurrencyDollarIcon, CalendarDaysIcon, PhoneIcon, InboxIcon } from '@heroicons/react/24/solid'
+import { addToDb } from '../utils/fakeDB';
 
 
 
@@ -21,7 +22,7 @@ const JobDetails = () => {
     const { id, logo, jobTitle, companyName, jobLocation, salary, jobDescription, jobtime, jobResponsibilities, educationalRequirement, experience, phone, email, address } = job;
 
     const handleAddToCart=id=>{
-        console.log(id)
+        addToDb(id)
     }
     return (
         <div>
