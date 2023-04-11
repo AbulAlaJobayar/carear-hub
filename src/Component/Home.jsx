@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Jobcetagory from './Jobcetagory';
+import Fetcher from './Fetcher';
 
 const Home = () => {
     const datas = useLoaderData()
     console.log(datas)
-
+const [showAll, setShowAll]=useState(false);
+const handleShowAll=()=>{
+    setShowAll(true)
+}
     return (
         <>
             {/* top header section */}
@@ -32,8 +36,19 @@ const Home = () => {
                     <p className='text-lg mt-4 text-gray-700'>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 </div>
                 <div className='my-container grid md:grid-cols-2 lg:grid-cols-4 gap-6 '>
-                    {datas.map(data=><Jobcetagory key={data.id} data={data}></Jobcetagory>) }
+                    {datas.slice(0, 4).map(data => <Jobcetagory key={data.id} data={data}></Jobcetagory>)}
                 </div>
+            </section>
+            {/* Featured Jobs section */}
+            <section className='my-container'>
+            <div className='text-center'>
+                    <h1 className='text-gray-700 text-3xl  lg:text-5xl font-bold'>Featured Jobs</h1>
+                    <p className='text-lg mt-4 text-gray-700'>Explore thousands of job opportunities with all the information you need. Its your future</p>
+                </div>
+                <div className='grid lg:grid-cols-2 my-container gap-4'>
+                    {datas.slice(0,showAll ? 6 : 4).map(data=><Fetcher key={data.id} data={data}></Fetcher>)}
+                </div>
+               <p  onClick={handleShowAll}> <button  className='mx-auto btn-primary text-center'>Show All</button></p>
             </section>
         </>
     );
