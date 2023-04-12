@@ -1,25 +1,25 @@
 [
     {
         "id":1,
-      "icon": "https://i.ibb.co/Ykv8dtf/accounts-1.png",
+      "icon": "https://i.ibb.co/9yCg4VF/accounts-1.png",
       "title": "Account & Finance",
       "available": 300
     },
     {
         "id":2,
-        "icon": "https://i.ibb.co/m0rn4R9/business-1.png",
+        "icon": "https://i.ibb.co/vwpLsrG/business-1.png",
         "title": "Creative Design",
         "available": "100+"   
     },
     {
         "id":3,
-      "icon": "https://i.ibb.co/WxQQ3wW/social-media-1.png",
+      "icon": "https://i.ibb.co/kSp9mQJ/social-media-1.png",
       "title": "Marketing & Sales",
       "available": 150
     },
     {
         "id":4,
-        "icon": "https://i.ibb.co/9VXMr3q/chip-1.png",
+        "icon": "https://i.ibb.co/Qf8vFgH/chip-1.png",
         "title": "Engineering Job",
         "available": 224
     }
