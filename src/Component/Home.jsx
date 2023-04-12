@@ -5,6 +5,13 @@ import Fetcher from './Fetcher';
 
 
 const Home = () => {
+    const datas = useLoaderData()
+
+    const [showAll, setShowAll]=useState(false);
+    const handleShowAll=()=>{
+        setShowAll(true)
+    }
+
     const [allDatas,setAllDatas]=useState([]);
     useEffect(()=>{
         fetch('data.json')
@@ -13,11 +20,7 @@ const Home = () => {
 
     },[])
 
-const datas = useLoaderData()
-const [showAll, setShowAll]=useState(false);
-const handleShowAll=()=>{
-    setShowAll(true)
-}
+
 
     return (
         <>
@@ -55,7 +58,7 @@ const handleShowAll=()=>{
                     <p className='text-lg mt-4 text-gray-700'>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 </div>
                 <div className='grid lg:grid-cols-2 my-container gap-10'>
-                    {datas.slice(0,showAll ? 6 : 4).map(data=><Fetcher key={data.id} data={data}></Fetcher>)}
+                    {datas.slice(0 ,showAll ? 6 : 4).map(data=><Fetcher key={data.id} data={data}></Fetcher>)}
                 </div>
                <p  onClick={handleShowAll}> <button  className={`mx-auto border rounded  py-4 px-9 bg-gradient-to-r from-blue-300 to-purple-200 text-center text-xl font-bold text-gray-600 ${showAll===true?"hidden" :"block"}`}>Show All</button></p>
             </section>

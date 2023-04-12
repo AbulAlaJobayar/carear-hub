@@ -14,9 +14,9 @@ const AppliedJobs = () => {
         }
     }
     return (
-        <div>
+        <div >
              <h1 className='mt-14 text-3xl font-bold text-gray-700 text-center'>Applied Jobs</h1>
-            <div className=''>
+            <div className='my-container'>
                 {
                     totalData.map((product, index) => <TotalApplay key={index} product={product}></TotalApplay>)
                 }

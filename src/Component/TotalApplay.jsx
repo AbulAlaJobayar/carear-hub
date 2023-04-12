@@ -1,8 +1,10 @@
 import React from 'react';
 import { MapPinIcon, CurrencyDollarIcon, } from '@heroicons/react/24/solid'
+import { useNavigate } from 'react-router-dom';
 
 const TotalApplay = ({ product }) => {
-    const { logo, jobTitle, companyName, jobtime, jobLocation, salary } = product
+    const {id, logo, jobTitle, companyName, jobtime, jobLocation, salary } = product
+    const navigate = useNavigate()
     return (
         <div className='my-container flex items-center justify-between border border-gray-300 gap-9 mt-9 rounded-lg'>
             <div className='flex gap-6 items-center'>
@@ -26,7 +28,7 @@ const TotalApplay = ({ product }) => {
                 </div>
             </div>
             <div>
-<button className='btn-primary'> View Details</button>
+<button className='btn-primary' onClick={()=>navigate(`../jobdetails/${id}`)}> View Details</button>
             </div>
         </div>
     );
