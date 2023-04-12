@@ -32,7 +32,7 @@ const Fetcher = ({ data}) => {
                 
             </div>
             
-            <button onClick={()=>navigate(`jobdetails/${id}`)} className=' btn-primary '>View Details</button>
+            <button onClick={()=>navigate(`jobdetails/${id}`)} className=' btn-primary  mt-6'>View Details</button>
     
         </div>
     );
